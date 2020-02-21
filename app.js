@@ -1,17 +1,6 @@
-let response;
+const express = require('express');
+const app = express();
 
-exports.lambdaHandler = async (event, context) => {
-    try {
-        response = {
-            'statusCode': 200,
-            'body': JSON.stringify({
-                message: 'hello world',
-            })
-        }
-    } catch (err) {
-        console.log(err);
-        return err;
-    }
+app.get('/', (req, res) => { res.send("ERROR") });
 
-    return response
-};
+module.exports = app;
